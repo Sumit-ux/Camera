@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PulsePay | Fintech App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>PulsePay</h1>
+        <p class="muted">Modern personal finance workspace</p>
+      </div>
+      <button id="themeToggle" aria-label="Toggle theme">🌙</button>
+    </header>
+
+    <main class="grid">
+      <section class="card balances">
+        <h2>Balances</h2>
+        <div class="balance-grid">
+          <article>
+            <p>Checking</p>
+            <strong id="checkingBalance">$12,850.00</strong>
+          </article>
+          <article>
+            <p>Savings</p>
+            <strong id="savingsBalance">$34,110.00</strong>
+          </article>
+          <article>
+            <p>Investments</p>
+            <strong id="investBalance">$18,955.00</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="card transfer">
+        <h2>Quick Transfer</h2>
+        <form id="transferForm">
+          <label>
+            To
+            <input type="text" id="recipient" placeholder="Name or @handle" required />
+          </label>
+          <label>
+            Amount
+            <input type="number" id="amount" min="1" step="0.01" placeholder="0.00" required />
+          </label>
+          <button type="submit">Send Payment</button>
+        </form>
+        <p id="transferMessage" class="muted"></p>
+      </section>
+
+      <section class="card goals">
+        <h2>Saving Goals</h2>
+        <div id="goalsList"></div>
+      </section>
+
+      <section class="card transactions">
+        <h2>Recent Activity</h2>
+        <ul id="transactionList"></ul>
+      </section>
+    </main>
+
+    <template id="goalTemplate">
+      <article class="goal-item">
+        <div class="goal-head">
+          <p class="goal-name"></p>
+          <span class="goal-progress"></span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill"></div>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
